@@ -1,21 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../NAV_BANNER/nav.css">
+    <link rel="stylesheet" href="../INFORMATION/Info.css">
+    <link rel="stylesheet" href="../PRODUCTS_MODAL/products.css">
+    <link rel="stylesheet" href="../QUESTIONS_FOOTER/questions.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>landing</title>
 </head>
 
-<script src="/JS/scrip.js"></script>
+
 <body>
  <!--Camilo -->
+ <header class="header">
+  <nav class="nav-container">
+      <div class="brand">
+          <a href="">
+              <img  src="../IMG/Logo.png" alt="Logo">
+          </a>
+      </div>
+      <div  src ="../IMG/Logo.png"></div>
+      <div class="nav-links">
+          <a class="textNav" href="#inicio">Inicio</a>
+          <a class="textNav" href="#planes">Planes</a>
+          <a class="textNav" href="#testimonios">Testimonios</a>
+          <a class="textNav" href="#contacto">Contacto</a>
+      </div>
+      <a href="#planes" class="cta-button">¡Comienza ahora!</a>
+  </nav>
+</header>
 
-    <nav></nav>
-    <div></div>
 
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+      <h1>¡Transforma tu cuerpo y mente con nuestros programas de entrenamiento personalizados!</h1>
+      <p>Entrenamientos efectivos, flexibles y diseñados para alcanzar tus metas de fitness.</p>
+      <a href="#planes" class="cta-button">Ver planes</a>
+  </div>
+
+  <!-- Carrusel -->
+  <div class="carousel">
+      <div class="carousel-container">
+          <div class="carousel-slide">
+              <img src="../IMG/slide1.jpg" alt="Imagen 1">
+              <img src="../IMG/slide2.jpg" alt="Imagen 2">
+              <img src="../IMG/slide3.jpg" alt="Imagen 3">
+          </div>
+      </div>
+
+      <a href="#" class="prev" onclick="moveSlide(-1)">&#10094;</a>
+      <a href="#" class="next" onclick="moveSlide(1)">&#10095;</a>
+  </div>
+</section>
+
+  
   <!--Diego algo-->
-  <!--Javier -->
-  <!--Oscar -->
+
+  <section class="program-info">
+    <div class="section-container">
+        <h2 class="section-title">¿Qué incluyen nuestros entrenamientos?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="card-icon-container">
+                    <img src="../INFORMATION/icons/personalizedTraining.jpg" alt="Personalización" class="card-icon">
+                </div>
+                <h3>Entrenamiento Personalizado</h3>
+                <p>Adaptamos cada programa a tus necesidades y objetivos, ya sea ganar fuerza, perder peso o
+                    mejorar tu flexibilidad.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="card-icon-container">
+                    <img src="../INFORMATION/icons/coach.jpg" alt="Entrenadores Expertos" class="card-icon">
+                </div>
+                <h3>Entrenadores Expertos</h3>
+                <p>Accede a un equipo de entrenadores certificados, con amplia experiencia y pasión por ayudarte
+                    a alcanzar tus metas.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="card-icon-container">
+                    <img src="../INFORMATION/icons/gym.png" alt="Entrena donde quieras" class="card-icon">
+                </div>
+                <h3>Entrena donde quieras</h3>
+                <p>Disfruta de entrenamientos que puedes realizar tanto en casa como en el gimnasio, adaptados a
+                    tus recursos.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="card-icon-container">
+                    <img src="../INFORMATION" alt="Flexibilidad" class="card-icon">
+                </div>
+                <h3>Flexibilidad Total</h3>
+                <p>Organiza tus entrenamientos a tu ritmo, con horarios y sesiones que se ajustan a tu estilo de
+                    vida.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Session de testitomios.  -->
+<!-- Tarjetas dobles antes y despues.  -->
+<!-- Una sola tarjeta que se gira.  -->
+
+
+<section class="success-stories">
+    <h2>Historias de Éxito</h2>
+    <div class="stories-grid">
+        <!-- Tarjeta 1 -->
+        <div class="flip-card" role="figure">
+            <div class="flip-card-inner">
+                <!-- Cara del "Antes" -->
+                <div class="flip-card-front" data-label="Antes">
+                    <div class="card-image">
+                        <img src="../INFORMATION/images/person1_before.png" alt="Antes de Juan Pérez">
+                    </div>
+                </div>
+                <!-- Cara del "Después" -->
+                <div class="flip-card-back" data-label="Después">
+                    <div class="card-image">
+                        <img src="../INFORMATION/images/person1_after.png" alt="Después de Juan Pérez">
+                    </div>
+                </div>
+            </div>
+            <div class="card-text">
+                <h4>Juan Pérez</h4>
+                <p>"¡Gracias a los entrenamientos personalizados y a los entrenadores expertos, he transformado
+                    mi cuerpo!"</p>
+                <p class="card-data">Edad: 30 años | Logro: Pérdida de peso | Tiempo: 3 meses</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="flip-card" role="figure">
+            <div class="flip-card-inner">
+                <!-- Cara del "Antes" -->
+                <div class="flip-card-front" data-label="Antes">
+                    <div class="card-image">
+                        <img src="../INFORMATION/images/person2_before.png" alt="Antes de María González">
+                    </div>
+                </div>
+                <!-- Cara del "Después" -->
+                <div class="flip-card-back" data-label="Después">
+                    <div class="card-image">
+                        <img src="../INFORMATION/images/person2_after.png" alt="Después de María González">
+                    </div>
+                </div>
+            </div>
+            <div class="card-text">
+                <h4>María González</h4>
+                <p>"Los entrenamientos adaptados a mis necesidades me han ayudado a alcanzar mis metas
+                    rápidamente."</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="flip-card" role="figure">
+            <div class="flip-card-inner">
+                <!-- Cara del "Antes" -->
+                <div class="flip-card-front" data-label="Antes">
+                    <div class="card-image">
+                        <img src="../INFORMATION/images/person3_before.png" alt="Antes de Carlos Rodríguez">
+                    </div>
+                </div>
+                <!-- Cara del "Después" -->
+                <div class="flip-card-back" data-label="Después">
+                    <div class="card-image">
+                        <img src="../INFORMATION/images/person3_after.png" alt="Después de Carlos Rodríguez">
+                    </div>
+                </div>
+            </div>
+            <div class="card-text">
+                <h4>Carlos Rodríguez</h4>
+                <p>"El enfoque personalizado me ha ayudado a lograr resultados que no creía posibles."</p>
+                <p class="card-data">Edad: 40 años | Logro: Mejoría en flexibilidad | Tiempo: 2 meses</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="flip-card" role="figure">
+            <div class="flip-card-inner">
+                <!-- Cara del "Antes" -->
+                <div class="flip-card-front" data-label="Antes">
+                    <div class="card-image">
+                        <img src="../INFORMATION/images/person4_before.png" alt="Antes de Laura Fernández">
+                    </div>
+                </div>
+                <!-- Cara del "Después" -->
+                <div class="flip-card-back" data-label="Después">
+                    <div class="card-image">
+                        <img src="../INFORMATION/images/person4_after.png" alt="Después de Laura Fernández">
+                    </div>
+                </div>
+            </div>
+            <div class="card-text">
+                <h4>Laura Fernández</h4>
+                <p>"Ahora me siento más flexible, ágil y con mayor energía. ¡El cambio ha sido increíble!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--Oscar -->
+
+<section class="plans" id="planes">
+  <div class="section-container">
+      <h1 id="main-text-plan">ELIGE EL PLAN PERFECTO PARA TI</h1>
+      <div class="plans-grid">
+          <div class="plan-card">
+              <h3 id="plan">Plan Básico</h3>
+              <div class="plan-price">$000 al mes</div>
+              <ul class="plan-features">
+                  <li><i class="fas fa-check"></i>Acceso a rutinas básicas</li>
+                  <li><i class="fas fa-check"></i>Soporte limitado de entrenador</li>
+                  <li><i class="fas fa-times"></i>Planes de nutrición</li>
+                  <li><i class="fas fa-times"></i>Evaluaciones mensuales</li>
+              </ul>
+              <a href="#" class="cta-button">Elegir Básico</a>
+          </div>
+          <div class="plan-card">
+              <h3 id="premium-text-plan">Plan Premium</h3>
+              <div class="plan-price">$000 al mes</div>
+              <ul class="plan-features">
+                  <li><i class="fas fa-check"></i>Acceso a todas las rutinas</li>
+                  <li><i class="fas fa-check"></i>Soporte personalizado 24/7</li>
+                  <li><i class="fas fa-check"></i>Planes de nutrición personalizados</li>
+                  <li><i class="fas fa-check"></i>Evaluaciones mensuales</li>
+              </ul>
+              <a href="#" class="cta-button">Elegir Premium</a>
+          </div>
+      </div>
+  </div>
+
+  <!-- modal -->
+  <div class="modal-overlay" id="modal">
+      <div class="modal-content">
+          <h2>¡Plan seleccionado!</h2>
+          <p id="modal-message"></p>
+          <button class="cta-button close-modal">Cerrar</button>
+      </div>
+  </div>
+  
+</section>
+
+
+<!--Javier -->
+
+<section class="form-section">
+  <h2>Únete a nuestro gimnasio</h2>
+  <form class="gym-form">
+      <div class="form-row">
+          <label for="name">¿Cuál es tu nombre?</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+      </div>
+
+      <div class="form-row">
+          <label for="goal">¿Cuál es tu objetivo principal?</label>
+          <select id="goal" name="goal" required>
+              <option value="bajar_peso">Bajar de peso</option>
+              <option value="ganar_musculo">Ganar músculo</option>
+              <option value="mejorar_resistencia">Mejorar resistencia</option>
+              <option value="general">General</option>
+          </select>
+      </div>
+       <!-- Correo -->
+      <div class="form-row">
+          <label for="email">¿Cuál es tu correo electrónico?</label>
+          <input type="email" id="email" name="email" placeholder="Tu correo" required>
+      </div>
+
+      <!-- Numero de telefono -->
+      <div class="form-row">
+          <label for="phone">¿Cuál es tu número de teléfono?</label>
+          <input type="tel" id="phone" name="phone" placeholder="Tu teléfono" required>
+      </div>
+       
+       <!-- Boton -->
+     <button type="submit" class="submit-btn">Enviar</button>
+      <!-- Botón -->
+<!-- <button type="button" class="submit-btn" onclick="window.open('https://wa.me/1234567890?text=Hola%2C+quiero+más+información+sobre+el+gym', '_blank')">Enviar</button> -->
+
+
+  </form>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+      <div class="about-us">
+          <h3>Quiénes somos</h3>
+          <p>En nuestro gimnasio, nos dedicamos a ayudarte a alcanzar tus metas físicas en un ambiente motivador y profesional. Únete a nosotros y transforma tu vida.</p>
+      </div>
+      <div class="contact-info">
+          <h3>Contacto</h3>
+          <p>Dirección: Calle Ficticia 123, Ciudad Ejemplo</p>
+          <p>Teléfono: (123) 456-7890</p>
+          <p>Correo electrónico: contacto@gym.com</p>
+      </div>
+      <div class="social-media">
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+              <a href="#" class="social-icon">Facebook</a>
+              <a href="#" class="social-icon">Instagram</a>
+              <a href="#" class="social-icon">Twitter</a>
+          </div>
+      </div>
+  </div>
+  <p>&copy; 2025 Gym. Todos los derechos reservados.</p>
+</footer>
+  <script src="../JS/scrip.js"></script>
+  <script src="../PRODUCTS_MODAL/productos.js"></script>
 </body>
 </html>
