@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Gym</title>
+    <link rel="stylesheet" href="questions.css">
+</head>
+<body>
+    <section class="form-section">
+        <h2>Únete a nuestro gimnasio</h2>
+        <form class="gym-form">
+            <div class="form-row">
+                <label for="name">¿Cuál es tu nombre?</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="form-row">
+                <label for="goal">¿Cuál es tu objetivo principal?</label>
+                <select id="goal" name="goal" required>
+                    <option value="bajar_peso">Bajar de peso</option>
+                    <option value="ganar_musculo">Ganar músculo</option>
+                    <option value="mejorar_resistencia">Mejorar resistencia</option>
+                    <option value="general">General</option>
+                </select>
+            </div>
+             <!-- Correo -->
+            <div class="form-row">
+                <label for="email">¿Cuál es tu correo electrónico?</label>
+                <input type="email" id="email" name="email" placeholder="Tu correo" required>
+            </div>
+
+            <!-- Numero de telefono -->
+            <div class="form-row">
+                <label for="phone">¿Cuál es tu número de teléfono?</label>
+                <input type="tel" id="phone" name="phone" placeholder="Tu teléfono" required>
+            </div>
+             
+             <!-- Boton -->
+           <button type="submit" class="submit-btn">Enviar</button>
+            <!-- Botón -->
+<!-- <button type="button" class="submit-btn" onclick="window.open('https://wa.me/1234567890?text=Hola%2C+quiero+más+información+sobre+el+gym', '_blank')">Enviar</button> -->
+
+
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="about-us">
+                <h3>Quiénes somos</h3>
+                <p>En nuestro gimnasio, nos dedicamos a ayudarte a alcanzar tus metas físicas en un ambiente motivador y profesional. Únete a nosotros y transforma tu vida.</p>
+            </div>
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p>Dirección: Calle Ficticia 123, Ciudad Ejemplo</p>
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Correo electrónico: contacto@gym.com</p>
+            </div>
+            <div class="social-media">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2025 Gym. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
+
