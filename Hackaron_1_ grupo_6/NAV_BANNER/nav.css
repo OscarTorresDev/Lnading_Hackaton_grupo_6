@@ -1,0 +1,238 @@
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            width: 100%;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            transition: .5s, color .10s;
+                -webkit-transition: .5s, color .10s;
+                -moz-transition: .5s, color .10s;
+        }
+  
+       
+        .cta-button:hover{
+            transform: translatey(-10px);
+                -webkit-transform: translatey(-10px);
+                -moz-transform: translatey(-10px);
+        }
+
+        .textNav:hover {
+            color: #e74c3c;
+        }
+              
+
+        /* .cta-button:hover {
+            transform: scale(1.05);
+        } */
+
+        .brand img {
+            width: auto;
+            height: 50px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(91, 23, 6, 0.5)), url('../IMG/Portada.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Carousel Styles */
+
+
+        .carousel {
+            position: relative;
+            max-width: 20%;
+            margin-top: 30px;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide img {
+            width: 1%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Controles del Carrusel */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .prev {
+            left: 10px;
+            transform: translateY(-50%);
+        }
+
+        .next {
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+                            
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin-top: 3px;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Controles del Carrusel */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .prev {
+            left: 10px;
+            transform: translateY(-50%);
+        }
+
+        .next {
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+                            
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
