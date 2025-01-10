@@ -1,21 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="/CSS/style.css">
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>landing</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>landing</title>
+  <link rel="stylesheet" href="/CSS/style.css">
+  <link rel="stylesheet" href="../NAV_BANNER/nav.css">
+  <link rel="stylesheet" href="../PRODUCTS_MODAL/products.css" <link rel="stylesheet"
+    href="../PRODUCTS_MODAL/productos.js" <link rel="stylesheet" href="../QUESTIONS_FOOTER/questions.css
+  <link rel=" stylesheet" href="../INFORMATION/Info.css""
+  <link rel=" stylesheet" href="../INFORMATION/images" <link rel="stylesheet" href="../INFORMATION/icons" </head>
 
-<script src="/JS/scrip.js"></script>
+
 <body>
- <!--Camilo -->
+  <!--Camilo -->
+  <div id="Nav-container"></div>
 
-    <nav></nav>
-    <div></div>
+  <script>
+    // Función para cargar dinámicamente el Nav
+    function loadNav() {
+      fetch('../NAV_BANNER/Nav_banner.html') // Ruta correcta al archivo Nav_banner.html
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.text(); // Devuelve el contenido como texto
+        })
+        .then(data => {
+          document.getElementById('Nav-container').innerHTML = data; // Inserta el contenido en el contenedor
+        })
+        .catch(error => {
+          console.error('Error al cargar el Nav:', error); // Manejo de errores
+        });
+    }
 
-  <!--Diego algo-->
+    loadNav();  // Llamada a la función correctamente escrita
+  </script>
+
+  <div id="Info-container"></div>
+
+  <script>
+    // Función para cargar dinámicamente el Nav
+    function loadInfo() {
+      fetch('../INFORMATION/Info.html') // Ruta correcta al archivo Nav_banner.html
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.text(); // Devuelve el contenido como texto
+        })
+        .then(data => {
+          document.getElementById('Info-container').innerHTML = data; // Inserta el contenido en el contenedor
+        })
+        .catch(error => {
+          console.error('Error al cargar el Products:', error); // Manejo de errores
+        });
+    }
+
+    loadInfo();  // Llamada a la función correctamente escrita
+  </script>
+
+
+  <div id="Products-container"></div>
+
+  <script>
+    // Función para cargar dinámicamente el Nav
+    function loadProducts() {
+      fetch('../PRODUCTS_MODAL/products.html') // Ruta correcta al archivo Nav_banner.html
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.text(); // Devuelve el contenido como texto
+        })
+        .then(data => {
+          document.getElementById('Products-container').innerHTML = data; // Inserta el contenido en el contenedor
+        })
+        .catch(error => {
+          console.error('Error al cargar el Products:', error); // Manejo de errores
+        });
+    }
+
+    loadProducts();  // Llamada a la función correctamente escrita
+  </script>
+
+
   <!--Javier -->
   <!--Oscar -->
+  <script src="/JS/scrip.js"></script>
+
 </body>
+
 </html>
