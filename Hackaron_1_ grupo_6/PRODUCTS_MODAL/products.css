@@ -1,0 +1,215 @@
+
+:root {
+    --primary: #2c3e50;
+    --secondary: #e74c3c;
+    --accent: #3498db;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --alert: #f39c12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* cuerpo de la landing */
+
+body {
+    line-height: 1,6;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*TEXTO PRINCIPAL SECCION PLANES*/
+#main-text-plan{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--alert);
+    align-content: center;
+    text-align: center;
+    margin: 0px 0px 80px 0px;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+/* Esilos botones */
+.cta-button {
+    background: #e74c3c;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    font-size: large;
+    font-weight:bold;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* Planes */
+.plans {
+    padding: 4rem 2rem;
+    background: var(--dark);
+    /* background: linear-gradient(90deg, rgba(243,156,18,1) 0%, rgba(255,222,0,1) 100%); */
+    /* background: var(--alert); */
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.plan-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.section-container h2 {
+    color: var(--light);
+    margin-bottom: 1rem;
+}
+
+.plan-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: bolder;
+    font-size:50px;
+    
+}
+
+.plan-price {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.plan-features {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.plan-features li {
+    margin-bottom: 0.5rem;
+}
+
+.plan-features li i {
+    color: var(--accent);
+    margin-right: 0.5rem;
+}
+
+/*  animación tarjetas   */
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.plan-card {
+    animation: floating 2s ease-in-out infinite;
+}
+
+/* Desfase en la animación de la segunda tarjeta */
+.plan-card:nth-child(2) {
+    animation-delay: 0.5s;
+
+}
+
+/* aqui se desactiva animación en móviles para mejorar rendimiento */
+@media (max-width: 770px) {
+    .plan-card {
+        animation: none;
+    }
+}
+
+/* Animationes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+    
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Modal planes */
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Titulo dle modal */
+.modal-content h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* mensaje del modal */
+.modal-content p {
+    color: var(--dark);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* cuando s emuestra el modal */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* para cerrar boton */
+.close-modal {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background: var(--secondary);
+}
