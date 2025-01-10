@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Programas de Entrenamiento Personalizados</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            width: 100%;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Program Info Section */
+        .program-info {
+            padding: 4rem 2rem;
+            background: var(--light);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        /* Plans Section */
+        .plans {
+            padding: 4rem 2rem;
+            background: var(--light);
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .plan-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .plan-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .plan-features li {
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-features li i {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            background: var(--light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">FitLife</div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#planes">Planes</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <a href="#planes" class="cta-button">¡Comienza ahora!</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>¡Transforma tu cuerpo y mente con nuestros programas de entrenamiento personalizados!</h1>
+            <p>Entrenamientos efectivos, flexibles y diseñados para alcanzar tus metas de fitness.</p>
+            <a href="#planes" class="cta-button">Ver planes</a>
+        </div>
+    </section>
+
+    <section class="program-info">
+        <div class="section-container">
+            <h2>¿Qué incluyen nuestros entrenamientos?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Personalización Total</h3>
+                    <p>Programas adaptados a tus objetivos específicos de fuerza, pérdida de peso o flexibilidad.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Entrenadores Expertos</h3>
+                    <p>Acceso a profesionales certificados que te guiarán en cada paso de tu journey.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Entrena Donde Quieras</h3>
+                    <p>Rutinas diseñadas para realizar en casa o en el gimnasio, adaptadas a tu equipo disponible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonios">
+        <div class="section-container">
+            <h2>Historias de Éxito</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <img src="/api/placeholder/80/80" alt="Cliente 1">
+                    <h3>María García</h3>
+                    <p>"Increíble programa. He perdido 10kg en 3 meses y me siento mejor que nunca."</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="/api/placeholder/80/80" alt="Cliente 2">
+                    <h3>Carlos Rodríguez</h3>
+                    <p>"Los entrenadores son excelentes y el programa se adapta perfectamente a mi horario."</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="plans" id="planes">
+        <div class="section-container">
+            <h2>Elige el plan perfecto para ti</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h3>Plan Básico</h3>
+                    <div class="plan-price">$29.99/mes</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i>Acceso a rutinas básicas</li>
+                        <li><i class="fas fa-check"></i>Soporte limitado de entrenador</li>
+                        <li><i class="fas fa-times"></i>Planes de nutrición</li>
+                        <li><i class="fas fa-times"></i>Evaluaciones mensuales</li>
+                    </ul>
+                    <a href="#" class="cta-button">Elegir Básico</a>
+                </div>
+                <div class="plan-card">
+                    <h3>Plan Premium</h3>
+                    <div class="plan-price">$59.99/mes</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i>Acceso a todas las rutinas</li>
+                        <li><i class="fas fa-check"></i>Soporte personalizado 24/7</li>
+                        <li><i class="fas fa-check"></i>Planes de nutrición personalizados</li>
+                        <li><i class="fas fa-check"></i>Evaluaciones mensuales</li>
+                    </ul>
+                    <a href="#" class="cta-button">Elegir Premium</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="section-container">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Qué necesito para empezar?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Solo necesitas motivación y dispositivo con conexión a internet. Nuestros programas se adaptan a tu equipo disponible.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Puedo cancelar en cualquier momento?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Sí, puedes cancelar tu suscripción en cualquier momento sin compromisos ni penalizaciones.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contacto">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div>
+                    <h3>FitLife</h3>
+                    <p>Transformando vidas a través del fitness.</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#planes">Planes</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contacto</h3>
+                    <p>Email: info@fitlife.com</p>
+                    <p>Teléfono: (123) 456-7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // FAQ accordion functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    // Toggle current answer
+                    answer.classList.toggle('active');
+                    
+                    // Toggle icon rotation
+                    if (answer.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // Animate elements on scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Animate cards and sections
+            const animateElements = document.querySelectorAll('.benefit-card, .testimonial-card, .plan-card');
+            animateElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                observer.observe(element);
+            });
+
+            // Sticky header functionality
+            const header = document.querySelector('.header');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll <= 0) {
+                    header.style.transform = 'translateY(0)';
+                    return;
+                }
+
+                if (currentScroll > lastScroll && currentScroll > 80) {
+                    // Scrolling down & past header
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    header.style.transform = 'translateY(0)';
+                }
+
+                lastScroll = currentScroll;
+            });
+
+            // Plan selection handling
+            document.querySelectorAll('.plan-card .cta-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const plan = this.parentElement.querySelector('h3').textContent;
+                    const price = this.parentElement.querySelector('.plan-price').textContent;
+                    
+                    // Animate button click
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+
+                    // Show confirmation message
+                    const originalText = this.textContent;
+                    this.textContent = '¡Plan seleccionado!';
+                    this.style.backgroundColor = '#27ae60';
+                    
+                    // Reset button after animation
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.backgroundColor = '';
+                        
+                        // Aquí podrías agregar la lógica para redirigir al checkout o mostrar un modal
+                        alert(`Has seleccionado el ${plan} por ${price}. ¡Gracias por elegir FitLife!`);
+                    }, 1500);
+                });
+            });
+
+            // Mobile menu toggle (si se implementa posteriormente)
+            const createMobileMenu = () => {
+                if (window.innerWidth <= 768) {
+                    const mobileMenuButton = document.createElement('button');
+                    mobileMenuButton.classList.add('mobile-menu-button');
+                    mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    const nav = document.querySelector('.nav-container');
+                    nav.insertBefore(mobileMenuButton, nav.firstChild);
+
+                    mobileMenuButton.addEventListener('click', () => {
+                        document.querySelector('.nav-links').classList.toggle('show');
+                    });
+                }
+            };
+
+            // Call mobile menu creation on load
+            createMobileMenu();
+
+            // Add loading animation for images
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+            });
+        });
+    </script>
